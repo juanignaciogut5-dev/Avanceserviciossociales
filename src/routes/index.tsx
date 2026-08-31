@@ -1,18 +1,344 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  Activity,
   Ambulance,
   Baby,
+  Bone,
   Brain,
-  Check,
   Ear,
-  Flask,
-  Heart,
+  HeartPulse,
+  MapPin,
+  Phone,
+  Shield,
+  ShieldCheck,
+  Smile,
+  Stethoscope,
+  TestTube,
+  Video,
 } from "lucide-react";
 
+import logo from "@/assets/avance-logo.jpg.asset.json";
+import touchImage from "@/assets/touch-omesis.jpg";
+import {
+  CtaButton,
+  FloatingWhatsApp,
+  WhatsAppIcon,
+  waLink,
+} from "@/components/WhatsAppButton";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      {
+        title: "Avance Servicios Sociales | Salud y previsión en Alta Gracia",
+      },
+      {
+        name: "description",
+        content:
+          "Sepelio, atención primaria, ambulancia 24hs, telemedicina y sistema Touch de monitorización. Asesoramiento personalizado en Alta Gracia, Córdoba.",
+      },
+      {
+        property: "og:title",
+        content: "Avance Servicios Sociales | Salud y previsión en Alta Gracia",
+      },
+      {
+        property: "og:description",
+        content:
+          "Previsión, atención médica de excelencia y tecnología para acompañar a tu grupo familiar en Alta Gracia.",
+      },
+    ],
+  }),
   component: Index,
 });
 
+const navLinks = [
+  { label: "Servicios", href: "#servicios" },
+  { label: "Especialidades", href: "#especialidades" },
+  { label: "Sistema Touch", href: "#touch" },
+  { label: "Comercios", href: "#comercios" },
+];
+
+const services = [
+  {
+    icon: Shield,
+    title: "Seguro de Sepelio",
+    text: "Cobertura completa y contención familiar en cada paso del proceso.",
+  },
+  {
+    icon: Stethoscope,
+    title: "Atención Primaria",
+    text: "Acceso a profesionales de primer nivel, sin demoras ni trámites.",
+    badge: "Hasta 60% de descuento en Farmacias",
+  },
+  {
+    icon: Ambulance,
+    title: "Ambulancia 24hs",
+    text: "Traslados programados, urgencias y médico a domicilio.",
+  },
+  {
+    icon: Video,
+    title: "Consultas Virtuales",
+    text: "Médicos a distancia, rápidos y seguros, desde donde estés.",
+  },
+];
+
+const specialties = [
+  { icon: HeartPulse, label: "Cardiología" },
+  { icon: Smile, label: "Odontología" },
+  { icon: Stethoscope, label: "Clínica Médica" },
+  { icon: Bone, label: "Kinesiología" },
+  { icon: Activity, label: "EMMAC" },
+  { icon: Ear, label: "Fonoaudiología" },
+  { icon: Brain, label: "Psicología" },
+  { icon: TestTube, label: "Laboratorio" },
+  { icon: Baby, label: "Pediatría" },
+];
+
 function Index() {
-  return null;
+  return (
+    <div className="min-h-screen bg-background">
+      <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
+        <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+          <a href="#top" className="flex items-center">
+            <img
+              src={logo.url}
+              alt="Avance Servicios Sociales"
+              className="h-9 w-auto md:h-10"
+              width={220}
+              height={56}
+            />
+          </a>
+
+          <nav className="hidden items-center gap-9 lg:flex">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+
+          <a
+            href={waLink("Hola, necesito acceso al portal de afiliados de Avance.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-navy/20 px-5 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-primary hover:text-primary"
+          >
+            Acceso Afiliados
+          </a>
+        </div>
+      </header>
+
+      <main id="top">
+        {/* HERO */}
+        <section className="relative overflow-hidden">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(60%_100%_at_50%_0%,color-mix(in_oklab,var(--primary)_10%,transparent),transparent)]"
+          />
+          <div className="relative mx-auto max-w-4xl px-6 py-24 text-center md:py-36">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              <ShieldCheck className="h-3.5 w-3.5 text-primary" />
+              Alta Gracia · Córdoba
+            </span>
+
+            <h1 className="mt-8 text-4xl font-extrabold leading-[1.06] text-navy md:text-6xl">
+              Tranquilidad y respaldo para todo tu grupo familiar.
+            </h1>
+
+            <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              Combinamos previsión, atención médica de excelencia y tecnología para
+              acompañarte cuando más lo necesitás en Alta Gracia.
+            </p>
+
+            <div className="mt-10 flex flex-col items-center">
+              <CtaButton
+                text="Hola, quiero asesoramiento personalizado sobre los servicios de Avance."
+                className="px-8 py-4 text-base"
+              >
+                <WhatsAppIcon className="h-5 w-5" />
+                Solicitar Asesoramiento Personalizado
+              </CtaButton>
+              <p className="mt-4 text-xs font-medium text-muted-foreground">
+                Respuesta rápida • Atención personalizada
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICIOS */}
+        <section id="servicios" className="border-y border-border bg-surface">
+          <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                Servicios
+              </p>
+              <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">
+                Servicios integrales, una sola cobertura.
+              </h2>
+            </div>
+
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {services.map((s) => (
+                <article
+                  key={s.title}
+                  className="flex flex-col rounded-2xl border border-border bg-background p-8 shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+                >
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                    <s.icon className="h-6 w-6" strokeWidth={1.7} />
+                  </span>
+                  <h3 className="mt-6 text-lg font-bold text-navy">{s.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {s.text}
+                  </p>
+                  {s.badge && (
+                    <span className="mt-6 inline-flex self-start rounded-full bg-primary px-3 py-1.5 text-[0.7rem] font-bold uppercase tracking-wide text-primary-foreground">
+                      {s.badge}
+                    </span>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ESPECIALIDADES */}
+        <section id="especialidades" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              Cartilla médica
+            </p>
+            <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">
+              Especialidades a tu disposición
+            </h2>
+          </div>
+
+          <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3">
+            {specialties.map((sp) => (
+              <div
+                key={sp.label}
+                className="flex items-center gap-4 rounded-xl border border-border bg-background px-5 py-5 transition-colors hover:border-primary/40 hover:bg-surface"
+              >
+                <sp.icon className="h-5 w-5 shrink-0 text-primary" strokeWidth={1.7} />
+                <span className="text-sm font-semibold text-navy">{sp.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* TOUCH */}
+        <section id="touch" className="border-y border-border bg-surface">
+          <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 md:py-32 lg:grid-cols-2 lg:gap-20">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                Innovación
+              </p>
+              <h2 className="mt-4 text-3xl font-bold leading-tight text-navy md:text-4xl">
+                Únicos en Córdoba: Sistema Touch
+              </h2>
+              <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
+                Un botón que salva. Monitorización 24/7 diseñada para brindar
+                seguridad y asistencia inmediata a adultos mayores, embarazadas y
+                personas con discapacidad.
+              </p>
+              <div className="mt-9">
+                <CtaButton text="Hola, quiero conocer más sobre el Sistema Touch de Avance.">
+                  <WhatsAppIcon className="h-5 w-5" />
+                  Conocer más sobre Touch
+                </CtaButton>
+              </div>
+            </div>
+
+            <div className="relative">
+              <img
+                src={touchImage}
+                alt="Persona mayor con el botón de asistencia del Sistema Touch"
+                loading="lazy"
+                width={1200}
+                height={1008}
+                className="w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* COMERCIOS */}
+        <section id="comercios" className="bg-navy">
+          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:py-28 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h2 className="text-3xl font-bold leading-tight text-navy-foreground md:text-4xl">
+                Área Protegida para tu Comercio
+              </h2>
+              <ul className="mt-8 space-y-4">
+                {[
+                  "Cobertura de ambulancia 24hs para clientes y personal.",
+                  "Control de Ausentismo exclusivo para tu empresa.",
+                ].map((b) => (
+                  <li key={b} className="flex items-start gap-3">
+                    <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-navy-foreground/70" />
+                    <span className="text-base text-navy-foreground/85">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="lg:justify-self-end">
+              <CtaButton
+                variant="light"
+                text="Hola, quiero proteger mi comercio con el Área Protegida de Avance."
+                className="px-8 py-4 text-base"
+              >
+                <WhatsAppIcon className="h-5 w-5" />
+                Proteger mi negocio
+              </CtaButton>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-border bg-background">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-2">
+          <div>
+            <img
+              src={logo.url}
+              alt="Avance Servicios Sociales"
+              className="h-9 w-auto"
+              width={220}
+              height={56}
+              loading="lazy"
+            />
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
+              Ser referentes en servicios integrales, destacándonos por la innovación
+              y la excelencia.
+            </p>
+          </div>
+          <div className="md:justify-self-end">
+            <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-navy">
+              Contacto
+            </h3>
+            <p className="mt-5 flex items-start gap-3 text-sm text-muted-foreground">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              Avda. España 241/243, Alta Gracia (Córdoba)
+            </p>
+            <p className="mt-3 flex items-center gap-3 text-sm text-muted-foreground">
+              <Phone className="h-4 w-4 shrink-0 text-primary" />
+              <a href="tel:+543547632766" className="hover:text-primary">
+                3547-632766
+              </a>
+            </p>
+          </div>
+        </div>
+        <div className="border-t border-border">
+          <p className="mx-auto max-w-6xl px-6 py-6 text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Avance Servicios Sociales. Todos los derechos
+            reservados.
+          </p>
+        </div>
+      </footer>
+
+      <FloatingWhatsApp />
+    </div>
+  );
 }
