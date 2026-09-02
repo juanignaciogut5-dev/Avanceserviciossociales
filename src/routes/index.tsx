@@ -19,6 +19,8 @@ import {
 
 import logo from "@/assets/avance-logo.jpg.asset.json";
 import touchImage from "@/assets/touch-omesis.jpg";
+import touchMayores from "@/assets/touch-mayores.png.asset.json";
+import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
 import {
   CtaButton,
   FloatingWhatsApp,
@@ -262,6 +264,21 @@ function Index() {
                 className="w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
               />
             </div>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <img
+              src={touchMayores.url}
+              alt="Pareja mayor usando el botón de asistencia del Sistema Touch"
+              loading="lazy"
+              className="w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+            />
+            <img
+              src={touchJovenes.url}
+              alt="Jóvenes con discapacidad usando el botón de asistencia del Sistema Touch"
+              loading="lazy"
+              className="w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+            />
           </div>
         </section>
 
