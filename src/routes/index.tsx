@@ -1,10 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import {
   Activity,
   Ambulance,
   Baby,
   Bone,
   Brain,
+  ChevronLeft,
+  ChevronRight,
   Ear,
   HeartPulse,
   MapPin,
@@ -95,6 +98,98 @@ const specialties = [
   { icon: TestTube, label: "Laboratorio" },
   { icon: Baby, label: "Pediatría" },
 ];
+
+type CarouselImage = { src: string; alt: string };
+
+function TouchCarousel({ images }: { images: CarouselImage[] }) {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const count = images.length;
+
+  const goTo = (i: number) => setIndex((i + count) % count);
+  const next = () => goTo(index + 1);
+  const prev = () => goTo(index - 1);
+
+  useEffect(() => {
+    if (paused || count <= 1) return;
+    timer.current = setInterval(() => {
+      setIndex((i) => (i + 1) % count);
+    }, 5000);
+    return () => {
+      if (timer.current) clearInterval(timer.current);
+    };
+  }, [paused, count]);
+
+  return (
+    <div
+      className="relative mx-auto max-w-2xl"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      role="region"
+      aria-roledescription="carrusel"
+      aria-label="Galería del Sistema Touch"
+    >
+      <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-lift)]">
+        <div
+          className="flex transition-transform duration-700 ease-out"
+          style={{ transform: `translateX(-${index * 100}%)` }}
+        >
+          {images.map((img) => (
+            <img
+              key={img.alt}
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              className="aspect-[4/3] w-full shrink-0 object-cover"
+            />
+          ))}
+        </div>
+      </div>
+
+      {count > 1 && (
+        <>
+          {/* Botones de navegación */}
+          <button
+            type="button"
+            onClick={prev}
+            aria-label="Imagen anterior"
+            className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-navy/40 text-white backdrop-blur-sm transition-colors hover:bg-navy/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            onClick={next}
+            aria-label="Imagen siguiente"
+            className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-navy/40 text-white backdrop-blur-sm transition-colors hover:bg-navy/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+
+          {/* Indicadores */}
+          <div className="mt-4 flex items-center justify-center gap-2.5">
+            {images.map((img, i) => (
+              <button
+                key={img.alt}
+                type="button"
+                onClick={() => goTo(i)}
+                aria-label={`Ir a la imagen ${i + 1}`}
+                aria-current={i === index}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === index
+                    ? "w-7 bg-primary"
+                    : "w-2.5 bg-border hover:bg-muted-foreground"
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 function Index() {
   return (
@@ -266,18 +361,18 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <img
-              src={touchMayores.url}
-              alt="Pareja mayor usando el botón de asistencia del Sistema Touch"
-              loading="lazy"
-              className="w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
-            />
-            <img
-              src={touchJovenes.url}
-              alt="Jóvenes con discapacidad usando el botón de asistencia del Sistema Touch"
-              loading="lazy"
-              className="w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+          <div className="mt-14">
+            <TouchCarousel
+              images={[
+                {
+                  src: touchMayores.url,
+                  alt: "Pareja mayor usando el botón de asistencia del Sistema Touch",
+                },
+                {
+                  src: touchJovenes.url,
+                  alt: "Jóvenes con discapacidad usando el botón de asistencia del Sistema Touch",
+                },
+              ]}
             />
           </div>
         </section>
