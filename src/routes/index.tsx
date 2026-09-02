@@ -19,6 +19,8 @@ import {
 
 import logo from "@/assets/avance-logo.jpg.asset.json";
 import touchImage from "@/assets/touch-omesis.jpg";
+import touchMayores from "@/assets/touch-mayores.png.asset.json";
+import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
 import {
   CtaButton,
   FloatingWhatsApp,
