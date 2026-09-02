@@ -269,18 +269,18 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <img
-              src={touchMayores.url}
-              alt="Pareja mayor usando el botón de asistencia del Sistema Touch"
-              loading="lazy"
-              className="w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
-            />
-            <img
-              src={touchJovenes.url}
-              alt="Jóvenes con discapacidad usando el botón de asistencia del Sistema Touch"
-              loading="lazy"
-              className="w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+          <div className="mt-14">
+            <TouchCarousel
+              images={[
+                {
+                  src: touchMayores.url,
+                  alt: "Pareja mayor usando el botón de asistencia del Sistema Touch",
+                },
+                {
+                  src: touchJovenes.url,
+                  alt: "Jóvenes con discapacidad usando el botón de asistencia del Sistema Touch",
+                },
+              ]}
             />
           </div>
         </section>
