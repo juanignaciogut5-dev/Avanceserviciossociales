@@ -6,6 +6,8 @@ import {
   Baby,
   Bone,
   Brain,
+  ChevronLeft,
+  ChevronRight,
   Ear,
   HeartPulse,
   MapPin,
