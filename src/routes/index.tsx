@@ -344,7 +344,7 @@ function Index() {
             <img
               src={logo.url}
               alt="Avance Servicios Sociales"
-              className="h-12 w-auto md:h-14"
+              className="h-20 w-auto md:h-24"
               width={280}
               height={70}
             />
