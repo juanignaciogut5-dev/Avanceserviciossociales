@@ -486,10 +486,10 @@ function Index() {
               </h2>
             </div>
 
-            <div className="mt-14 grid gap-6 sm:grid-cols-2">
+            <div className="mt-14 grid gap-8 sm:grid-cols-2">
               {/* La Segunda - Liliana Alloco */}
-              <article className="flex flex-col items-center rounded-2xl border border-border bg-background p-8 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]">
-                <div className="flex h-28 w-full items-center justify-center rounded-xl bg-white p-4">
+              <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
+                <div className="flex h-44 w-full items-center justify-center rounded-2xl bg-white p-6 md:h-52">
                   <img
                     src={prestadorLaSegunda.url}
                     alt="La Segunda Seguros"
@@ -497,19 +497,19 @@ function Index() {
                     className="h-full w-auto max-w-full object-contain"
                   />
                 </div>
-                <h3 className="mt-6 text-lg font-bold text-navy">Liliana Alloco</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
+                <h3 className="mt-8 text-xl font-bold text-navy md:text-2xl">Liliana Alloco</h3>
+                <p className="mt-3 text-sm text-muted-foreground md:text-base">
                   Agencia Nro: 7573 — Mat. Nro: 81026
                 </p>
-                <address className="mt-3 not-italic text-sm leading-relaxed text-muted-foreground">
+                <address className="mt-4 not-italic text-sm leading-relaxed text-muted-foreground md:text-base">
                   Liniers 296 - Loc. 2 - Alta Gracia<br />
                   Libertad 313 - Villa La Bolsa
                 </address>
               </article>
 
               {/* Luppi - Servicios Funerarios */}
-              <article className="flex flex-col items-center rounded-2xl border border-border bg-background p-8 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]">
-                <div className="flex h-28 w-full items-center justify-center rounded-xl bg-white p-4">
+              <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
+                <div className="flex h-44 w-full items-center justify-center rounded-2xl bg-white p-6 md:h-52">
                   <img
                     src={prestadorLuppi.url}
                     alt="Luppi Servicios Funerarios"
@@ -517,13 +517,13 @@ function Index() {
                     className="h-full w-auto max-w-full object-contain"
                   />
                 </div>
-                <h3 className="mt-6 text-lg font-bold text-navy">
+                <h3 className="mt-8 text-xl font-bold text-navy md:text-2xl">
                   Luppi Servicios Funerarios
                 </h3>
-                <address className="mt-3 not-italic text-sm leading-relaxed text-muted-foreground">
+                <address className="mt-4 not-italic text-sm leading-relaxed text-muted-foreground md:text-base">
                   España 243 - Alta Gracia
                 </address>
-                <p className="mt-2 text-sm text-muted-foreground">
+                <p className="mt-3 text-sm text-muted-foreground md:text-base">
                   Tel: <a href="tel:+543547506660" className="hover:text-primary">3547 - 506660</a>
                 </p>
               </article>
