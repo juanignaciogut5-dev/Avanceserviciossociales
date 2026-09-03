@@ -25,6 +25,8 @@ import logo from "@/assets/avance-logo.jpg.asset.json";
 import touchImage from "@/assets/touch-omesis.jpg";
 import touchMayores from "@/assets/touch-mayores.png.asset.json";
 import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
+import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
+import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
 import {
   CtaButton,
   FloatingWhatsApp,
