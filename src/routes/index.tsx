@@ -12,6 +12,7 @@ import {
   HeartPulse,
   MapPin,
   Phone,
+  Send,
   Shield,
   ShieldCheck,
   Smile,
@@ -61,6 +62,7 @@ const navLinks = [
   { label: "Especialidades", href: "#especialidades" },
   { label: "Sistema Touch", href: "#touch" },
   { label: "Comercios", href: "#comercios" },
+  { label: "Contacto", href: "#contacto" },
 ];
 
 const services = [
