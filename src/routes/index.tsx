@@ -545,6 +545,23 @@ function Index() {
             </div>
           </div>
         </section>
+
+        {/* CONTACTO */}
+        <section id="contacto" className="border-t border-border bg-surface">
+          <div className="mx-auto max-w-6xl px-6 py-24 text-center md:py-32">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              Contacto
+            </p>
+            <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">
+              Solicitar Asesoramiento
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
+              Dejanos tus datos y tu consulta: un asesor de Avance te responde
+              por WhatsApp a la brevedad.
+            </p>
+            <ContactForm />
+          </div>
+        </section>
       </main>
 
       <footer className="border-t border-border bg-background">
