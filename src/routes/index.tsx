@@ -25,6 +25,8 @@ import logo from "@/assets/avance-logo.jpg.asset.json";
 import touchImage from "@/assets/touch-omesis.jpg";
 import touchMayores from "@/assets/touch-mayores.png.asset.json";
 import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
+import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
+import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
 import {
   CtaButton,
   FloatingWhatsApp,
@@ -469,6 +471,63 @@ function Index() {
                 <span className="text-sm font-semibold text-navy">{sp.label}</span>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* PRESTADORES */}
+        <section id="prestadores" className="border-y border-border bg-surface">
+          <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                Prestadores
+              </p>
+              <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">
+                Nuestros Prestadores
+              </h2>
+            </div>
+
+            <div className="mt-14 grid gap-6 sm:grid-cols-2">
+              {/* La Segunda - Liliana Alloco */}
+              <article className="flex flex-col items-center rounded-2xl border border-border bg-background p-8 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]">
+                <div className="flex h-28 w-full items-center justify-center rounded-xl bg-white p-4">
+                  <img
+                    src={prestadorLaSegunda.url}
+                    alt="La Segunda Seguros"
+                    loading="lazy"
+                    className="h-full w-auto max-w-full object-contain"
+                  />
+                </div>
+                <h3 className="mt-6 text-lg font-bold text-navy">Liliana Alloco</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Agencia Nro: 7573 — Mat. Nro: 81026
+                </p>
+                <address className="mt-3 not-italic text-sm leading-relaxed text-muted-foreground">
+                  Liniers 296 - Loc. 2 - Alta Gracia<br />
+                  Libertad 313 - Villa La Bolsa
+                </address>
+              </article>
+
+              {/* Luppi - Servicios Funerarios */}
+              <article className="flex flex-col items-center rounded-2xl border border-border bg-background p-8 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]">
+                <div className="flex h-28 w-full items-center justify-center rounded-xl bg-white p-4">
+                  <img
+                    src={prestadorLuppi.url}
+                    alt="Luppi Servicios Funerarios"
+                    loading="lazy"
+                    className="h-full w-auto max-w-full object-contain"
+                  />
+                </div>
+                <h3 className="mt-6 text-lg font-bold text-navy">
+                  Luppi Servicios Funerarios
+                </h3>
+                <address className="mt-3 not-italic text-sm leading-relaxed text-muted-foreground">
+                  España 243 - Alta Gracia
+                </address>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Tel: <a href="tel:+543547506660" className="hover:text-primary">3547 - 506660</a>
+                </p>
+              </article>
+            </div>
           </div>
         </section>
 
