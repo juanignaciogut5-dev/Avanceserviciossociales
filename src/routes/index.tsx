@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   Activity,
   Ambulance,
@@ -200,7 +200,7 @@ function ContactForm() {
   const [servicio, setServicio] = useState("Salud");
   const [mensaje, setMensaje] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const lineas = [
       "Hola, quiero asesoramiento personalizado sobre los servicios de Avance.",
