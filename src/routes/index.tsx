@@ -193,22 +193,166 @@ function TouchCarousel({ images }: { images: CarouselImage[] }) {
   );
 }
 
+function ContactForm() {
+  const [nombre, setNombre] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [email, setEmail] = useState("");
+  const [servicio, setServicio] = useState("Salud");
+  const [mensaje, setMensaje] = useState("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const lineas = [
+      "Hola, quiero asesoramiento personalizado sobre los servicios de Avance.",
+      "",
+      `Nombre: ${nombre.trim()}`,
+      `Teléfono: ${telefono.trim()}`,
+    ];
+    if (email.trim()) lineas.push(`Email: ${email.trim()}`);
+    lineas.push(`Servicio de interés: ${servicio}`);
+    if (mensaje.trim()) lineas.push("", `Mensaje: ${mensaje.trim()}`);
+    window.open(waLink(lineas.join("\n")), "_blank", "noopener,noreferrer");
+  };
+
+  const inputClass =
+    "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors focus:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/30";
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="mx-auto mt-14 max-w-2xl rounded-2xl border border-border bg-background p-8 text-left shadow-[var(--shadow-soft)] md:p-10"
+    >
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div className="sm:col-span-2">
+          <label
+            htmlFor="nombre"
+            className="mb-2 block text-sm font-semibold text-navy"
+          >
+            Nombre completo <span className="text-primary">*</span>
+          </label>
+          <input
+            id="nombre"
+            type="text"
+            required
+            maxLength={100}
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
+            placeholder="Tu nombre y apellido"
+            className={inputClass}
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="telefono"
+            className="mb-2 block text-sm font-semibold text-navy"
+          >
+            Teléfono <span className="text-primary">*</span>
+          </label>
+          <input
+            id="telefono"
+            type="tel"
+            required
+            maxLength={30}
+            value={telefono}
+            onChange={(e) => setTelefono(e.target.value)}
+            placeholder="3547-000000"
+            className={inputClass}
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="email"
+            className="mb-2 block text-sm font-semibold text-navy"
+          >
+            Email <span className="font-normal text-muted-foreground">(opcional)</span>
+          </label>
+          <input
+            id="email"
+            type="email"
+            maxLength={255}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="tu@email.com"
+            className={inputClass}
+          />
+        </div>
+
+        <div className="sm:col-span-2">
+          <label
+            htmlFor="servicio"
+            className="mb-2 block text-sm font-semibold text-navy"
+          >
+            Servicio de interés
+          </label>
+          <select
+            id="servicio"
+            value={servicio}
+            onChange={(e) => setServicio(e.target.value)}
+            className={inputClass}
+          >
+            <option>Salud</option>
+            <option>Seguro de Sepelio</option>
+            <option>Sistema Touch</option>
+            <option>Comercios</option>
+            <option>Otro</option>
+          </select>
+        </div>
+
+        <div className="sm:col-span-2">
+          <label
+            htmlFor="mensaje"
+            className="mb-2 block text-sm font-semibold text-navy"
+          >
+            Mensaje <span className="font-normal text-muted-foreground">(opcional)</span>
+          </label>
+          <textarea
+            id="mensaje"
+            rows={4}
+            maxLength={1000}
+            value={mensaje}
+            onChange={(e) => setMensaje(e.target.value)}
+            placeholder="Contanos tu consulta..."
+            className={`${inputClass} resize-y`}
+          />
+        </div>
+      </div>
+
+      <div className="mt-8 flex flex-col items-center">
+        <button
+          type="submit"
+          className="inline-flex items-center justify-center gap-2.5 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-[var(--shadow-lift)] transition-colors hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          <Send className="h-5 w-5" />
+          Enviar consulta por WhatsApp
+        </button>
+        <p className="mt-4 text-xs font-medium text-muted-foreground">
+          Se abre WhatsApp con tu consulta lista para enviar
+        </p>
+      </div>
+    </form>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
-        <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+        <div className="mx-auto flex max-w-6xl items-center justify-center px-6 pt-5">
           <a href="#top" className="flex items-center">
             <img
               src={logo.url}
               alt="Avance Servicios Sociales"
-              className="h-9 w-auto md:h-10"
-              width={220}
-              height={56}
+              className="h-12 w-auto md:h-14"
+              width={280}
+              height={70}
             />
           </a>
+        </div>
 
-          <nav className="hidden items-center gap-9 lg:flex">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-6 px-6">
+          <nav className="flex items-center gap-6 overflow-x-auto whitespace-nowrap lg:gap-9">
             {navLinks.map((l) => (
               <a
                 key={l.href}
@@ -224,7 +368,7 @@ function Index() {
             href={waLink("Hola, necesito acceso al portal de afiliados de Avance.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-navy/20 px-5 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-primary hover:text-primary"
+            className="shrink-0 rounded-full border border-navy/20 px-5 py-2 text-sm font-semibold text-navy transition-colors hover:border-primary hover:text-primary"
           >
             Acceso Afiliados
           </a>
