@@ -29,6 +29,7 @@ import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
 import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
 import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
 import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
+import areaProtegida from "@/assets/area-protegida.jpg.asset.json";
 import {
   CtaButton,
   FloatingWhatsApp,
@@ -539,7 +540,7 @@ function Index() {
             </div>
 
             <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {/* La Segunda - Liliana Alloco */}
+              {/* La Segunda - Liliana Allocco */}
               <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
                 <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-white p-8 md:h-72">
                   <img
@@ -549,7 +550,7 @@ function Index() {
                     className="h-full w-auto max-w-full object-contain"
                   />
                 </div>
-                <h3 className="mt-8 text-xl font-bold text-navy md:text-2xl">Liliana Alloco</h3>
+                <h3 className="mt-8 text-xl font-bold text-navy md:text-2xl">Liliana Allocco</h3>
                 <p className="mt-3 text-sm text-muted-foreground md:text-base">
                   Agencia Nro: 7573 — Mat. Nro: 81026
                 </p>
@@ -650,27 +651,38 @@ function Index() {
 
         {/* COMERCIOS */}
         <section id="comercios" className="bg-navy">
-          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:py-28 lg:grid-cols-2 lg:items-center">
-            <div>
+          <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+            <div className="text-center">
               <h2 className="text-3xl font-bold leading-tight text-navy-foreground md:text-4xl">
-                Área Protegida para tu Comercio
+                Área Protegida para tu Empresa y/o Comercio
               </h2>
-              <ul className="mt-8 space-y-4">
-                {[
-                  "Cobertura de ambulancia 24hs para clientes y personal.",
-                  "Control de Ausentismo exclusivo para tu empresa.",
-                ].map((b) => (
-                  <li key={b} className="flex items-start gap-3">
-                    <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-navy-foreground/70" />
-                    <span className="text-base text-navy-foreground/85">{b}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
-            <div className="lg:justify-self-end">
+
+            <ul className="mx-auto mt-10 max-w-2xl space-y-4">
+              {[
+                "Cobertura de ambulancia 24hs para clientes y personal.",
+                "Control de Ausentismo exclusivo para tu empresa.",
+              ].map((b) => (
+                <li key={b} className="flex items-start gap-3">
+                  <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-navy-foreground/70" />
+                  <span className="text-base text-navy-foreground/85">{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-2xl">
+              <img
+                src={areaProtegida.url}
+                alt="Área Protegida de Avance: ambulancia 24 horas y datos de contacto"
+                loading="lazy"
+                className="h-auto w-full object-cover"
+              />
+            </div>
+
+            <div className="mt-12 text-center">
               <CtaButton
                 variant="light"
-                text="Hola, quiero proteger mi comercio con el Área Protegida de Avance."
+                text="Hola, quiero proteger mi negocio con el Área Protegida de Avance."
                 className="px-8 py-4 text-base"
               >
                 <WhatsAppIcon className="h-5 w-5" />
