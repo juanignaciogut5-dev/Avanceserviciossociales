@@ -6,6 +6,7 @@ import {
   Baby,
   Bone,
   Brain,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
   Ear,
@@ -27,6 +28,7 @@ import touchMayores from "@/assets/touch-mayores.png.asset.json";
 import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
 import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
 import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
+import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
 import {
   CtaButton,
   FloatingWhatsApp,
@@ -337,6 +339,56 @@ function ContactForm() {
   );
 }
 
+const profesionales = [
+  { nombre: "Od. Karina Echanique", matricula: "MP. 7900" },
+  { nombre: "Od. Ivana Garin Sanchez", matricula: "MP. 7634" },
+  { nombre: "Od. Maria Fernanda Audisio", matricula: "MP." },
+  { nombre: "Od. Belen Nasiff", matricula: "MP." },
+];
+
+function ProfesionalesAccordion() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="mt-6 w-full">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls="profesionales-dentik"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-navy/20 px-5 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+      >
+        Nuestros Profesionales
+        <ChevronDown
+          className={`h-4 w-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      <div
+        id="profesionales-dentik"
+        role="region"
+        className={`grid transition-all duration-300 ease-out ${
+          open ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <ul className="overflow-hidden rounded-2xl border border-border bg-surface px-6 py-4 text-left">
+          {profesionales.map((p) => (
+            <li
+              key={p.nombre}
+              className="flex items-center justify-between gap-3 border-b border-border/60 py-2.5 last:border-0"
+            >
+              <span className="text-sm font-semibold text-navy">{p.nombre}</span>
+              <span className="text-xs font-medium text-muted-foreground">
+                {p.matricula}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
@@ -486,7 +538,7 @@ function Index() {
               </h2>
             </div>
 
-            <div className="mt-14 grid gap-8 sm:grid-cols-2">
+            <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {/* La Segunda - Liliana Alloco */}
               <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
                 <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-white p-8 md:h-72">
@@ -526,6 +578,29 @@ function Index() {
                 <p className="mt-3 text-sm text-muted-foreground md:text-base">
                   Tel: <a href="tel:+543547506660" className="hover:text-primary">3547 - 506660</a>
                 </p>
+              </article>
+
+              {/* DENTIK - Soluciones Odontológicas */}
+              <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
+                <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-white p-8 md:h-72">
+                  <img
+                    src={prestadorDentik.url}
+                    alt="DENTIK Soluciones Odontológicas"
+                    loading="lazy"
+                    className="h-full w-auto max-w-full object-contain"
+                  />
+                </div>
+                <h3 className="mt-8 text-xl font-bold text-navy md:text-2xl">
+                  DENTIK — Soluciones Odontológicas
+                </h3>
+                <address className="mt-4 not-italic text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Paraguay 86 - Alta Gracia
+                </address>
+                <p className="mt-3 text-sm text-muted-foreground md:text-base">
+                  Tel: <a href="tel:+543513153021" className="hover:text-primary">351-3153021</a>
+                </p>
+
+                <ProfesionalesAccordion />
               </article>
             </div>
           </div>
