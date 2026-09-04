@@ -28,6 +28,7 @@ import touchMayores from "@/assets/touch-mayores.png.asset.json";
 import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
 import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
 import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
+import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
 import {
   CtaButton,
   FloatingWhatsApp,
