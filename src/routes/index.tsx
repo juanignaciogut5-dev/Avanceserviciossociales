@@ -29,6 +29,7 @@ import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
 import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
 import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
 import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
+import areaProtegida from "@/assets/area-protegida.jpg.asset.json";
 import {
   CtaButton,
   FloatingWhatsApp,
@@ -539,7 +540,7 @@ function Index() {
             </div>
 
             <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {/* La Segunda - Liliana Alloco */}
+              {/* La Segunda - Liliana Allocco */}
               <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
                 <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-white p-8 md:h-72">
                   <img
@@ -549,7 +550,7 @@ function Index() {
                     className="h-full w-auto max-w-full object-contain"
                   />
                 </div>
-                <h3 className="mt-8 text-xl font-bold text-navy md:text-2xl">Liliana Alloco</h3>
+                <h3 className="mt-8 text-xl font-bold text-navy md:text-2xl">Liliana Allocco</h3>
                 <p className="mt-3 text-sm text-muted-foreground md:text-base">
                   Agencia Nro: 7573 — Mat. Nro: 81026
                 </p>
