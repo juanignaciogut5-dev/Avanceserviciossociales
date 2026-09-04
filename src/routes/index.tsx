@@ -488,7 +488,7 @@ function Index() {
               </h2>
             </div>
 
-            <div className="mt-14 grid gap-8 sm:grid-cols-2">
+            <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {/* La Segunda - Liliana Alloco */}
               <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
                 <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-white p-8 md:h-72">
