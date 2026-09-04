@@ -651,27 +651,38 @@ function Index() {
 
         {/* COMERCIOS */}
         <section id="comercios" className="bg-navy">
-          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:py-28 lg:grid-cols-2 lg:items-center">
-            <div>
+          <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+            <div className="text-center">
               <h2 className="text-3xl font-bold leading-tight text-navy-foreground md:text-4xl">
-                Área Protegida para tu Comercio
+                Área Protegida para tu Empresa y/o Comercio
               </h2>
-              <ul className="mt-8 space-y-4">
-                {[
-                  "Cobertura de ambulancia 24hs para clientes y personal.",
-                  "Control de Ausentismo exclusivo para tu empresa.",
-                ].map((b) => (
-                  <li key={b} className="flex items-start gap-3">
-                    <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-navy-foreground/70" />
-                    <span className="text-base text-navy-foreground/85">{b}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
-            <div className="lg:justify-self-end">
+
+            <ul className="mx-auto mt-10 max-w-2xl space-y-4">
+              {[
+                "Cobertura de ambulancia 24hs para clientes y personal.",
+                "Control de Ausentismo exclusivo para tu empresa.",
+              ].map((b) => (
+                <li key={b} className="flex items-start gap-3">
+                  <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-navy-foreground/70" />
+                  <span className="text-base text-navy-foreground/85">{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-2xl">
+              <img
+                src={areaProtegida.url}
+                alt="Área Protegida de Avance: ambulancia 24 horas y datos de contacto"
+                loading="lazy"
+                className="h-auto w-full object-cover"
+              />
+            </div>
+
+            <div className="mt-12 text-center">
               <CtaButton
                 variant="light"
-                text="Hola, quiero proteger mi comercio con el Área Protegida de Avance."
+                text="Hola, quiero proteger mi negocio con el Área Protegida de Avance."
                 className="px-8 py-4 text-base"
               >
                 <WhatsAppIcon className="h-5 w-5" />
