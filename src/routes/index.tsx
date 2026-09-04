@@ -529,6 +529,29 @@ function Index() {
                   Tel: <a href="tel:+543547506660" className="hover:text-primary">3547 - 506660</a>
                 </p>
               </article>
+
+              {/* DENTIK - Soluciones Odontológicas */}
+              <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
+                <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-white p-8 md:h-72">
+                  <img
+                    src={prestadorDentik.url}
+                    alt="DENTIK Soluciones Odontológicas"
+                    loading="lazy"
+                    className="h-full w-auto max-w-full object-contain"
+                  />
+                </div>
+                <h3 className="mt-8 text-xl font-bold text-navy md:text-2xl">
+                  DENTIK — Soluciones Odontológicas
+                </h3>
+                <address className="mt-4 not-italic text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Paraguay 86 - Alta Gracia
+                </address>
+                <p className="mt-3 text-sm text-muted-foreground md:text-base">
+                  Tel: <a href="tel:+543513153021" className="hover:text-primary">351-3153021</a>
+                </p>
+
+                <ProfesionalesAccordion />
+              </article>
             </div>
           </div>
         </section>
