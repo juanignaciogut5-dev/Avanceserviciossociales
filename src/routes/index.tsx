@@ -339,6 +339,56 @@ function ContactForm() {
   );
 }
 
+const profesionales = [
+  { nombre: "Od. Karina Echanique", matricula: "MP. 7900" },
+  { nombre: "Od. Ivana Garin Sanchez", matricula: "MP. 7634" },
+  { nombre: "Od. Maria Fernanda Audisio", matricula: "MP." },
+  { nombre: "Od. Belen Nasiff", matricula: "MP." },
+];
+
+function ProfesionalesAccordion() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="mt-6 w-full">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls="profesionales-dentik"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-navy/20 px-5 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+      >
+        Nuestros Profesionales
+        <ChevronDown
+          className={`h-4 w-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      <div
+        id="profesionales-dentik"
+        role="region"
+        className={`grid transition-all duration-300 ease-out ${
+          open ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <ul className="overflow-hidden rounded-2xl border border-border bg-surface px-6 py-4 text-left">
+          {profesionales.map((p) => (
+            <li
+              key={p.nombre}
+              className="flex items-center justify-between gap-3 border-b border-border/60 py-2.5 last:border-0"
+            >
+              <span className="text-sm font-semibold text-navy">{p.nombre}</span>
+              <span className="text-xs font-medium text-muted-foreground">
+                {p.matricula}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
