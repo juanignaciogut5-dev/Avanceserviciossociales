@@ -204,7 +204,7 @@ function ContactForm() {
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
   const [email, setEmail] = useState("");
-  const [servicio, setServicio] = useState("Salud");
+  const [servicio, setServicio] = useState("Seguro de Sepelio");
   const [mensaje, setMensaje] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -299,11 +299,10 @@ function ContactForm() {
             onChange={(e) => setServicio(e.target.value)}
             className={inputClass}
           >
-            <option>Salud</option>
             <option>Seguro de Sepelio</option>
+            <option>Seguro de Sepelio + Atención Primaria</option>
             <option>Sistema Touch</option>
-            <option>Comercios</option>
-            <option>Otro</option>
+            <option>Área Protegida</option>
           </select>
         </div>
 
