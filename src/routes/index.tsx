@@ -651,6 +651,40 @@ function Index() {
           </div>
         </section>
 
+        {/* TELEMEDICINA */}
+        <section
+          id="telemedicina"
+          className="bg-[linear-gradient(180deg,oklch(0.97_0.03_85)_0%,oklch(0.985_0.012_85)_45%,var(--background)_100%)]"
+        >
+          <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 md:py-32 lg:grid-cols-2 lg:gap-20">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[oklch(0.62_0.18_130)]">
+                Telemedicina
+              </p>
+              <h2 className="mt-4 text-3xl font-extrabold leading-tight text-navy md:text-4xl">
+                TELEMEDICINA
+              </h2>
+              <p className="mt-4 text-2xl font-semibold text-navy/80 md:text-3xl">
+                Tu Médico, Donde Estés
+              </p>
+              <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
+                Tranquilidad y respaldo para todo tu grupo familiar, a un clic de
+                distancia. Consultas virtuales rápidas, seguras y con la calidez de
+                nuestros profesionales, sin necesidad de traslados.
+              </p>
+            </div>
+
+            <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-lift)]">
+              <img
+                src={telemedicina.url}
+                alt="Plataforma de telemedicina de Avance"
+                loading="lazy"
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* COMERCIOS */}
         <section id="comercios" className="bg-navy">
           <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
