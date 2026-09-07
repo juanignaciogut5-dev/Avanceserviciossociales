@@ -344,8 +344,9 @@ function ContactForm() {
 const profesionales = [
   { nombre: "Od. Karina Echanique", matricula: "MP. 7900" },
   { nombre: "Od. Ivana Garin Sanchez", matricula: "MP. 7634" },
-  { nombre: "Od. Maria Fernanda Audisio", matricula: "MP." },
-  { nombre: "Od. Belen Nasiff", matricula: "MP." },
+  { nombre: "Od. Maria Fernanda Audisio", matricula: "MP. 11812" },
+  { nombre: "Od. Belen Nasiff", matricula: "MP. 12117" },
+  { nombre: "Od. Benencia Luciana", matricula: "MP. 12684" },
 ];
 
 function ProfesionalesAccordion() {
