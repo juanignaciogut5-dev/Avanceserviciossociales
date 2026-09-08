@@ -429,7 +429,7 @@ function WelcomeSplash() {
       role="dialog"
       aria-modal="true"
       aria-label="Bienvenidos a Avance Servicios Sociales"
-      className={`fixed inset-0 z-[60] flex flex-col items-center justify-center gap-6 bg-navy px-6 text-center transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[60] flex flex-col items-center justify-center gap-8 bg-background px-6 text-center transition-opacity duration-500 ${
         closing ? "opacity-0" : "opacity-100"
       }`}
     >
@@ -440,15 +440,16 @@ function WelcomeSplash() {
         width={280}
         height={70}
       />
-      <div className="flex flex-col items-center gap-2">
-        <p className="text-sm font-medium uppercase tracking-[0.3em] text-white/70 sm:text-base">
+      <span className="block h-px w-16 bg-navy/20" aria-hidden="true" />
+      <div className="flex flex-col items-center gap-3">
+        <p className="text-sm font-medium uppercase tracking-[0.35em] text-navy/60 sm:text-base">
           Bienvenidos a
         </p>
-        <p className="text-2xl font-bold uppercase tracking-tight text-white sm:text-4xl md:text-5xl">
+        <p className="text-2xl font-bold uppercase tracking-tight text-navy sm:text-4xl md:text-5xl">
           Avance Servicios Sociales
         </p>
       </div>
-      <div className="mt-2 flex flex-col items-center gap-1 text-white/60">
+      <div className="mt-1 flex flex-col items-center gap-1 text-navy/50">
         <ChevronDown
           className="h-6 w-6 animate-bounce sm:h-7 sm:w-7"
           aria-hidden="true"
