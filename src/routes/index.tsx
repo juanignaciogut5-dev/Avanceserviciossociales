@@ -392,9 +392,77 @@ function ProfesionalesAccordion() {
   );
 }
 
+function WelcomeSplash() {
+  const [visible, setVisible] = useState(true);
+  const [closing, setClosing] = useState(false);
+
+  useEffect(() => {
+    if (!visible) return;
+
+    const startClose = () => {
+      setClosing(true);
+      window.setTimeout(() => setVisible(false), 600);
+    };
+
+    const timer = window.setTimeout(startClose, 3000);
+
+    const onScroll = () => startClose();
+    const opts = { passive: true, once: true } as AddEventListenerOptions;
+    window.addEventListener("wheel", onScroll, opts);
+    window.addEventListener("touchmove", onScroll, opts);
+    window.addEventListener("keydown", onScroll, opts);
+    window.addEventListener("scroll", onScroll, opts);
+
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("wheel", onScroll);
+      window.removeEventListener("touchmove", onScroll);
+      window.removeEventListener("keydown", onScroll);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [visible]);
+
+  if (!visible) return null;
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Bienvenidos a Avance Servicios Sociales"
+      className={`fixed inset-0 z-[60] flex flex-col items-center justify-center gap-6 bg-navy px-6 text-center transition-opacity duration-500 ${
+        closing ? "opacity-0" : "opacity-100"
+      }`}
+    >
+      <img
+        src={logo.url}
+        alt="Avance Servicios Sociales"
+        className="h-20 w-auto sm:h-24 md:h-28"
+        width={280}
+        height={70}
+      />
+      <div className="flex flex-col items-center gap-2">
+        <p className="text-sm font-medium uppercase tracking-[0.3em] text-white/70 sm:text-base">
+          Bienvenidos a
+        </p>
+        <p className="text-2xl font-bold uppercase tracking-tight text-white sm:text-4xl md:text-5xl">
+          Avance Servicios Sociales
+        </p>
+      </div>
+      <div className="mt-2 flex flex-col items-center gap-1 text-white/60">
+        <ChevronDown
+          className="h-6 w-6 animate-bounce sm:h-7 sm:w-7"
+          aria-hidden="true"
+        />
+        <span className="text-xs sm:text-sm">Desliza para continuar</span>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
+      <WelcomeSplash />
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-center px-6 pt-5">
           <a href="#top" className="flex items-center">
