@@ -22,7 +22,7 @@ import {
   Video,
 } from "lucide-react";
 
-import logo from "@/assets/avance-logo.jpg.asset.json";
+import logo from "@/assets/avance-logo.png";
 import touchImage from "@/assets/touch-omesis.jpg";
 import touchMayores from "@/assets/touch-mayores.png.asset.json";
 import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
@@ -434,7 +434,7 @@ function WelcomeSplash() {
       }`}
     >
       <img
-        src={logo.url}
+        src={logo}
         alt="Avance Servicios Sociales"
         className="h-20 w-auto sm:h-24 md:h-28"
         width={280}
