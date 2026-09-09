@@ -22,7 +22,7 @@ import {
   Video,
 } from "lucide-react";
 
-import logo from "@/assets/avance-logo.jpg.asset.json";
+import logo from "@/assets/avance-logo.png";
 import touchImage from "@/assets/touch-omesis.jpg";
 import touchMayores from "@/assets/touch-mayores.png.asset.json";
 import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
@@ -434,7 +434,7 @@ function WelcomeSplash() {
       }`}
     >
       <img
-        src={logo.url}
+        src={logo}
         alt="Avance Servicios Sociales"
         className="h-20 w-auto sm:h-24 md:h-28"
         width={280}
@@ -468,7 +468,7 @@ function Index() {
         <div className="mx-auto flex max-w-6xl items-center justify-center px-6 pt-5">
           <a href="#top" className="flex items-center">
             <img
-              src={logo.url}
+              src={logo}
               alt="Avance Servicios Sociales"
               className="h-20 w-auto md:h-24"
               width={280}
@@ -819,7 +819,7 @@ function Index() {
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-2">
           <div>
             <img
-              src={logo.url}
+              src={logo}
               alt="Avance Servicios Sociales"
               className="h-9 w-auto"
               width={220}
