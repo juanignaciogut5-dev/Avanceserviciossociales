@@ -490,7 +490,7 @@ function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-center px-6 pt-5">
         <a href="#top" className="flex items-center">
           <img
@@ -532,9 +532,18 @@ function Header() {
           Acceso Afiliados
         </a>
 
+        {/* Overlay difumina el fondo de la página, no el panel */}
+        <div
+          aria-hidden={!menuOpen}
+          onClick={() => setMenuOpen(false)}
+          className={`fixed inset-0 z-40 bg-navy/30 backdrop-blur-sm transition-opacity duration-200 ${
+            menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+        />
+
         <div
           id="menu-principal"
-          className={`absolute inset-x-4 top-full z-50 origin-top rounded-2xl border border-border/70 bg-background/80 p-3 shadow-[var(--shadow-lift)] backdrop-blur-md transition-all duration-200 ease-out sm:inset-x-auto sm:left-6 sm:w-72 ${
+          className={`absolute inset-x-4 top-full z-[60] origin-top rounded-2xl border border-border bg-background p-3 shadow-[var(--shadow-lift)] transition-all duration-200 ease-out sm:inset-x-auto sm:left-6 sm:w-72 ${
             menuOpen
               ? "pointer-events-auto translate-y-2 scale-100 opacity-100"
               : "pointer-events-none -translate-y-1 scale-[0.98] opacity-0"
