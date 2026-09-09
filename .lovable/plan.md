@@ -27,7 +27,7 @@ Nueva sección `#quienes-somos` ubicada **al final, después de Área Protegida 
 
 ## Cambios en `src/routes/index.tsx`
 1. Agregar `{ label: "Quiénes Somos", href: "#quienes-somos" }` al inicio de `navLinks`.
-2. Insertar la `<section id="quienes-somos">` entre el cierre del Hero (`</section>` línea ~539) y `<section id="servicios">` (línea ~542).
+2. Insertar la `<section id="quienes-somos">` entre el cierre de `<section id="comercios">` (línea ~801) y `<section id="contacto">` (línea ~804).
 3. Importar iconos adicionales si hace falta (p. ej. `Zap`, `Users`, `Target`, `Eye`).
 
 ## Verificación
