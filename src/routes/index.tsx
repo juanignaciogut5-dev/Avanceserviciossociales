@@ -896,6 +896,57 @@ function Index() {
           </div>
         </section>
 
+        {/* EMPRESAS QUE CONFÍAN EN NOSOTROS */}
+        <section id="confian" className="border-y border-border bg-surface">
+          <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+            <div className="text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                Confianza
+              </p>
+              <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">
+                Empresas que confían en nosotros
+              </h2>
+            </div>
+
+            <div className="mt-12 grid grid-cols-1 items-center gap-10 sm:grid-cols-3 md:gap-16">
+              {[
+                {
+                  src: prestadorLaSegunda.url,
+                  alt: "La Segunda Seguros",
+                  name: "La Segunda Seguros",
+                },
+                {
+                  src: prestadorLuppi.url,
+                  alt: "Luppi Servicios Funerarios",
+                  name: "Luppi Servicios Funerarios",
+                },
+                {
+                  src: clubAngloViejo.url,
+                  alt: "Club Anglo Viejo Alta Gracia",
+                  name: "Club Anglo Viejo",
+                },
+              ].map((logo) => (
+                <div
+                  key={logo.name}
+                  className="flex flex-col items-center transition-all duration-200 hover:-translate-y-1"
+                >
+                  <div className="flex h-24 w-full items-center justify-center md:h-28">
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      loading="lazy"
+                      className="h-full w-auto max-w-full object-contain"
+                    />
+                  </div>
+                  <span className="mt-5 text-sm font-semibold tracking-wide text-navy md:text-base">
+                    {logo.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* QUIÉNES SOMOS */}
         <section id="quienes-somos" className="bg-background">
           <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
