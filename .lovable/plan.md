@@ -1,7 +1,7 @@
 # Plan: Sección "Quiénes Somos"
 
 ## Ubicación
-Nueva sección `#quienes-somos` ubicada **justo después del Hero y antes de Servicios**, para presentar la identidad institucional antes de los servicios. Se agrega el enlace "Quiénes Somos" a `navLinks` como **primer item**, antes de "Servicios".
+Nueva sección `#quienes-somos` ubicada **al final, después de Área Protegida (`#comercios`) y antes de Contacto (`#contacto`)**, para cerrar el recorrido institucional antes del formulario. Se agrega el enlace "Quiénes Somos" a `navLinks` como **último item antes de "Contacto"**.
 
 ## Contenido (texto provisto, tildes corregidas)
 - Eyebrow: "Avance"
