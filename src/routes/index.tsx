@@ -574,41 +574,6 @@ function Index() {
     <div className="min-h-screen bg-background">
       <WelcomeSplash />
       <Header />
-        <div className="mx-auto flex max-w-6xl items-center justify-center px-6 pt-5">
-          <a href="#top" className="flex items-center">
-            <img
-              src={logo}
-              alt="Avance Servicios Sociales"
-              className="h-20 w-auto md:h-24"
-              width={280}
-              height={70}
-            />
-          </a>
-        </div>
-
-        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-6 px-6">
-          <nav className="flex items-center gap-6 overflow-x-auto whitespace-nowrap lg:gap-9">
-            {navLinks.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-              >
-                {l.label}
-              </a>
-            ))}
-          </nav>
-
-          <a
-            href={waLink("Hola, necesito acceso al portal de afiliados de Avance.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 rounded-full border border-navy/20 px-5 py-2 text-sm font-semibold text-navy transition-colors hover:border-primary hover:text-primary"
-          >
-            Acceso Afiliados
-          </a>
-        </div>
-      </header>
 
       <main id="top">
         {/* HERO */}
