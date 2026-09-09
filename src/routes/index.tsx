@@ -36,6 +36,7 @@ import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
 import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
 import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
 import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
+import clubAngloViejo from "@/assets/club-anglo-viejo.jpg.asset.json";
 import areaProtegida from "@/assets/area-protegida.jpg.asset.json";
 import telemedicina from "@/assets/telemedicina.jpg.asset.json";
 import telemedicinaFoto from "@/assets/telemedicina-foto.jpg.asset.json";
