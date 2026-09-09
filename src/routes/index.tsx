@@ -13,8 +13,10 @@ import {
   Eye,
   HeartPulse,
   MapPin,
+  Menu,
   Phone,
   Send,
+  X,
   Shield,
   ShieldCheck,
   Smile,
@@ -465,46 +467,113 @@ function WelcomeSplash() {
   );
 }
 
-function Index() {
-  return (
-    <div className="min-h-screen bg-background">
-      <WelcomeSplash />
-      <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-center px-6 pt-5">
-          <a href="#top" className="flex items-center">
-            <img
-              src={logo}
-              alt="Avance Servicios Sociales"
-              className="h-20 w-auto md:h-24"
-              width={280}
-              height={70}
-            />
-          </a>
-        </div>
+function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-6 px-6">
-          <nav className="flex items-center gap-6 overflow-x-auto whitespace-nowrap lg:gap-9">
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [menuOpen]);
+
+  return (
+    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-center px-6 pt-5">
+        <a href="#top" className="flex items-center">
+          <img
+            src={logo}
+            alt="Avance Servicios Sociales"
+            className="h-20 w-auto md:h-24"
+            width={280}
+            height={70}
+          />
+        </a>
+      </div>
+
+      <div
+        ref={menuRef}
+        className="relative mx-auto flex h-14 max-w-6xl items-center justify-between gap-6 px-6"
+      >
+        <button
+          type="button"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-expanded={menuOpen}
+          aria-controls="menu-principal"
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          className="flex items-center gap-2 rounded-full border border-navy/20 px-5 py-2 text-sm font-semibold text-navy transition-colors hover:border-primary hover:text-primary"
+        >
+          {menuOpen ? (
+            <X className="h-4 w-4" aria-hidden="true" />
+          ) : (
+            <Menu className="h-4 w-4" aria-hidden="true" />
+          )}
+          Menú
+        </button>
+
+        <a
+          href={waLink("Hola, necesito acceso al portal de afiliados de Avance.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0 rounded-full border border-navy/20 px-5 py-2 text-sm font-semibold text-navy transition-colors hover:border-primary hover:text-primary"
+        >
+          Acceso Afiliados
+        </a>
+
+        <div
+          id="menu-principal"
+          className={`absolute inset-x-4 top-full z-50 origin-top rounded-2xl border border-border/70 bg-background/80 p-3 shadow-[var(--shadow-lift)] backdrop-blur-md transition-all duration-200 ease-out sm:inset-x-auto sm:left-6 sm:w-72 ${
+            menuOpen
+              ? "pointer-events-auto translate-y-2 scale-100 opacity-100"
+              : "pointer-events-none -translate-y-1 scale-[0.98] opacity-0"
+          }`}
+        >
+          <nav className="flex flex-col">
             {navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                onClick={() => setMenuOpen(false)}
+                className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-primary"
               >
                 {l.label}
               </a>
             ))}
+            <a
+              href={waLink(
+                "Hola, necesito acceso al portal de afiliados de Avance."
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 rounded-xl bg-navy px-4 py-3 text-center text-sm font-semibold text-navy-foreground transition-colors hover:bg-primary"
+            >
+              Acceso Afiliados
+            </a>
           </nav>
-
-          <a
-            href={waLink("Hola, necesito acceso al portal de afiliados de Avance.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 rounded-full border border-navy/20 px-5 py-2 text-sm font-semibold text-navy transition-colors hover:border-primary hover:text-primary"
-          >
-            Acceso Afiliados
-          </a>
         </div>
-      </header>
+      </div>
+    </header>
+  );
+}
+
+function Index() {
+  return (
+    <div className="min-h-screen bg-background">
+      <WelcomeSplash />
+      <Header />
 
       <main id="top">
         {/* HERO */}
