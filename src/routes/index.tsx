@@ -629,6 +629,10 @@ function Index() {
                   Liniers 296 - Loc. 2 - Alta Gracia<br />
                   Libertad 313 - Villa La Bolsa
                 </address>
+                <span className="mt-6 inline-block rounded-full bg-primary px-5 py-2.5 text-xs font-semibold leading-snug text-white md:text-sm">
+                  Al ser afiliado de Avance, obtenés importantes beneficios en
+                  todos los productos de la compañía.
+                </span>
               </article>
 
               {/* Luppi - Servicios Funerarios */}
