@@ -629,9 +629,8 @@ function Index() {
                   Liniers 296 - Loc. 2 - Alta Gracia<br />
                   Libertad 313 - Villa La Bolsa
                 </address>
-                <span className="mt-6 inline-block rounded-full bg-primary px-5 py-2.5 text-xs font-semibold leading-snug text-white md:text-sm">
-                  Al ser afiliado de Avance, obtenés importantes beneficios en
-                  todos los productos de la compañía.
+                <span className="mt-6 inline-block rounded-2xl border border-primary/20 bg-primary/5 px-6 py-4 text-center text-xs font-medium leading-relaxed tracking-wide text-primary md:text-sm">
+                  Afiliados de Avance, podrás obtener importantes beneficios en todos los productos.
                 </span>
               </article>
 
