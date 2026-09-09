@@ -468,7 +468,7 @@ function Index() {
         <div className="mx-auto flex max-w-6xl items-center justify-center px-6 pt-5">
           <a href="#top" className="flex items-center">
             <img
-              src={logo.url}
+              src={logo}
               alt="Avance Servicios Sociales"
               className="h-20 w-auto md:h-24"
               width={280}
@@ -819,7 +819,7 @@ function Index() {
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-2">
           <div>
             <img
-              src={logo.url}
+              src={logo}
               alt="Avance Servicios Sociales"
               className="h-9 w-auto"
               width={220}
