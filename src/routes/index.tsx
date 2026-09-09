@@ -73,6 +73,7 @@ const navLinks = [
   { label: "Sistema Touch", href: "#touch" },
   { label: "Telemedicina", href: "#telemedicina" },
   { label: "Comercios", href: "#comercios" },
+  { label: "Quiénes Somos", href: "#quienes-somos" },
   { label: "Contacto", href: "#contacto" },
 ];
 
