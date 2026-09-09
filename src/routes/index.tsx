@@ -38,6 +38,7 @@ import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
 import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
 import areaProtegida from "@/assets/area-protegida.jpg.asset.json";
 import telemedicina from "@/assets/telemedicina.jpg.asset.json";
+import telemedicinaFoto from "@/assets/telemedicina-foto.jpg.asset.json";
 import {
   CtaButton,
   FloatingWhatsApp,
@@ -818,6 +819,12 @@ function Index() {
         >
           <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 md:py-32 lg:grid-cols-2 lg:gap-20">
             <div>
+              <img
+                src={telemedicina.url}
+                alt="Logo de telemedicina de Avance"
+                loading="lazy"
+                className="mb-6 h-20 w-auto"
+              />
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[oklch(0.62_0.18_130)]">
                 Telemedicina
               </p>
@@ -836,8 +843,8 @@ function Index() {
 
             <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-lift)]">
               <img
-                src={telemedicina.url}
-                alt="Plataforma de telemedicina de Avance"
+                src={telemedicinaFoto.url}
+                alt="Consulta virtual de telemedicina con un profesional médico"
                 loading="lazy"
                 className="h-auto w-full object-cover"
               />
