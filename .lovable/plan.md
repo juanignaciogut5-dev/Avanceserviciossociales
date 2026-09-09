@@ -1,7 +1,7 @@
 # Plan: Sección "Quiénes Somos"
 
 ## Ubicación
-Nueva sección `#quienes-somos` ubicada **justo después del Hero y antes de Servicios**, para presentar la identidad institucional antes de los servicios. Se agrega el enlace "Quiénes Somos" a `navLinks` como **primer item**, antes de "Servicios".
+Nueva sección `#quienes-somos` ubicada **al final, después de Área Protegida (`#comercios`) y antes de Contacto (`#contacto`)**, para cerrar el recorrido institucional antes del formulario. Se agrega el enlace "Quiénes Somos" a `navLinks` como **último item antes de "Contacto"**.
 
 ## Contenido (texto provisto, tildes corregidas)
 - Eyebrow: "Avance"
@@ -27,7 +27,7 @@ Nueva sección `#quienes-somos` ubicada **justo después del Hero y antes de Ser
 
 ## Cambios en `src/routes/index.tsx`
 1. Agregar `{ label: "Quiénes Somos", href: "#quienes-somos" }` al inicio de `navLinks`.
-2. Insertar la `<section id="quienes-somos">` entre el cierre del Hero (`</section>` línea ~539) y `<section id="servicios">` (línea ~542).
+2. Insertar la `<section id="quienes-somos">` entre el cierre de `<section id="comercios">` (línea ~801) y `<section id="contacto">` (línea ~804).
 3. Importar iconos adicionales si hace falta (p. ej. `Zap`, `Users`, `Target`, `Eye`).
 
 ## Verificación
