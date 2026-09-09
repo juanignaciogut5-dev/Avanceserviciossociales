@@ -897,7 +897,7 @@ function Index() {
         </section>
 
         {/* EMPRESAS QUE CONFÍAN EN NOSOTROS */}
-        <section id="confian" className="border-y border-border bg-surface">
+        <section id="confian" className="border-y border-border bg-background">
           <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
             <div className="text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
