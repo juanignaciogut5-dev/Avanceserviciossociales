@@ -38,6 +38,7 @@ import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
 import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
 import areaProtegida from "@/assets/area-protegida.jpg.asset.json";
 import telemedicina from "@/assets/telemedicina.jpg.asset.json";
+import telemedicinaFoto from "@/assets/telemedicina-foto.jpg.asset.json";
 import {
   CtaButton,
   FloatingWhatsApp,
