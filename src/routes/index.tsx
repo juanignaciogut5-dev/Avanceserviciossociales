@@ -805,6 +805,108 @@ function Index() {
           </div>
         </section>
 
+        {/* QUIÉNES SOMOS */}
+        <section id="quienes-somos" className="bg-background">
+          <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                Avance
+              </p>
+              <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">
+                ¿Quiénes Somos?
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                Somos una Empresa dedicada a brindar soluciones integrales que
+                combinan protección desde un Seguro de Sepelio hasta una
+                cobertura de Salud Primaria, ofreciendo bienestar para toda la
+                familia.
+              </p>
+            </div>
+
+            {/* Misión y Visión */}
+            <div className="mt-14 grid gap-6 md:grid-cols-2">
+              <div className="rounded-2xl border border-border bg-surface p-8 shadow-[var(--shadow-soft)]">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                  <Target className="h-6 w-6" strokeWidth={1.7} />
+                </span>
+                <h3 className="mt-5 text-lg font-bold text-navy">
+                  Nuestra Misión
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Brindar tranquilidad y respaldo a nuestros afiliados.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border bg-surface p-8 shadow-[var(--shadow-soft)]">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                  <Eye className="h-6 w-6" strokeWidth={1.7} />
+                </span>
+                <h3 className="mt-5 text-lg font-bold text-navy">
+                  Nuestra Visión
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Ser una empresa referente en servicios integrales de salud y
+                  previsión, destacándonos por la innovación, la cercanía con
+                  nuestros afiliados y la excelencia en la atención.
+                </p>
+              </div>
+            </div>
+
+            {/* Por qué elegir Avance */}
+            <div className="mt-14">
+              <h3 className="text-2xl font-bold text-navy md:text-3xl">
+                Por qué elegir Avance
+              </h3>
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  {
+                    icon: Users,
+                    title: "Atención personalizada",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    title: "Servicio integral en un solo lugar",
+                  },
+                  {
+                    icon: Zap,
+                    title: "Respuesta rápida ante emergencias",
+                  },
+                  {
+                    icon: Activity,
+                    title: "Tecnología aplicada al cuidado de la salud",
+                  },
+                ].map((p) => (
+                  <div
+                    key={p.title}
+                    className="flex flex-col items-start rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/40"
+                  >
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                      <p.icon className="h-6 w-6" strokeWidth={1.7} />
+                    </span>
+                    <p className="mt-4 text-sm font-semibold leading-relaxed text-navy">
+                      {p.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Nuestro Compromiso */}
+            <div className="mt-14 overflow-hidden rounded-3xl bg-navy px-8 py-12 md:px-12 md:py-14">
+              <h3 className="text-2xl font-bold text-navy-foreground md:text-3xl">
+                Nuestro Compromiso
+              </h3>
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-navy-foreground/85">
+                En AVANCE trabajamos todos los días para mejorar la calidad de
+                vida de nuestros afiliados, brindando respaldo, cercanía y
+                soluciones reales cuando más se necesitan.
+              </p>
+              <p className="mt-5 text-lg font-semibold text-navy-foreground">
+                Súmate a AVANCE y empezá a vivir con más tranquilidad.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* CONTACTO */}
         <section id="contacto" className="border-t border-border bg-surface">
           <div className="mx-auto max-w-6xl px-6 py-24 text-center md:py-32">
