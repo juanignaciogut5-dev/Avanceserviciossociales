@@ -900,8 +900,14 @@ function Index() {
                 vida de nuestros afiliados, brindando respaldo, cercanía y
                 soluciones reales cuando más se necesitan.
               </p>
-              <p className="mt-5 text-lg font-semibold text-navy-foreground">
-                Súmate a AVANCE y empezá a vivir con más tranquilidad.
+            </div>
+            <div className="mt-6 rounded-3xl bg-primary px-8 py-10 text-center md:px-12 md:py-12">
+              <p className="text-lg font-bold uppercase tracking-wide text-white md:text-xl">
+                Súmate a{" "}
+                <span className="font-extrabold tracking-widest text-white drop-shadow-sm">
+                  Avance
+                </span>{" "}
+                y empezá a vivir con más tranquilidad.
               </p>
             </div>
           </div>
