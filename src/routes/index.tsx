@@ -10,6 +10,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Ear,
+  Eye,
   HeartPulse,
   MapPin,
   Phone,
@@ -18,8 +19,11 @@ import {
   ShieldCheck,
   Smile,
   Stethoscope,
+  Target,
   TestTube,
+  Users,
   Video,
+  Zap,
 } from "lucide-react";
 
 import logo from "@/assets/avance-logo.png";
