@@ -533,14 +533,18 @@ function Header() {
           Acceso Afiliados
         </a>
 
-        {/* Overlay difumina el fondo de la página, no el panel */}
-        <div
-          aria-hidden={!menuOpen}
-          onClick={() => setMenuOpen(false)}
-          className={`fixed inset-0 z-40 bg-navy/30 backdrop-blur-sm transition-opacity duration-200 ${
-            menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
-          }`}
-        />
+        {/* Overlay difumina el fondo de la página (fuera del header vía portal
+            para que el header y el panel queden nítidos) */}
+        {createPortal(
+          <div
+            aria-hidden={!menuOpen}
+            onClick={() => setMenuOpen(false)}
+            className={`fixed inset-0 z-40 bg-navy/30 backdrop-blur-sm transition-opacity duration-200 ${
+              menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+            }`}
+          />,
+          document.body
+        )}
 
         <div
           id="menu-principal"
