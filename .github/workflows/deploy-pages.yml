@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
 
       # Base path "/<nombre-del-repo>/" para Project Pages (usuario.github.io/repo).
-      # Si usás un User/Org Page (usuario.github.io) o dominio propio en la raíz,
+      # Si usás un User/Org Page (usuario.github.io) o un dominio propio en la raíz,
       # cambiá el valor a "/".
       - name: Set base path
         run: echo "GITHUB_PAGES_BASE=/${GITHUB_REPOSITORY#*/}/" >> "$GITHUB_ENV"
@@ -31,15 +31,26 @@ jobs:
       - uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        run: bun install
 
       - name: Build static site
         run: bun run build
 
+      - name: Assemble Pages output
+        run: |
+          set -e
+          rm -rf _site
+          cp -r dist/client _site
+          # El shell de la SPA es la página de entrada y el fallback de rutas.
+          cp _site/_shell.html _site/index.html
+          cp _site/_shell.html _site/404.html
+          touch _site/.nojekyll
+          ls -la _site
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .output/public
+          path: _site
 
   deploy:
     needs: build
