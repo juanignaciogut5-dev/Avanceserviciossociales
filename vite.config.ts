@@ -7,7 +7,7 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Cuando se compila para GitHub Pages (GitHub Actions define GITHUB_PAGES=true),
-// generamos un sitio estático: prerender de las páginas + shell SPA para el resto.
+// generamos un sitio 100% estático (modo SPA, sin servidor) en dist/client.
 const isGithubPages = process.env["GITHUB_PAGES"] === "true";
 
 export default defineConfig({
@@ -18,13 +18,10 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    ...(isGithubPages
-      ? {
-          spa: { enabled: true },
-          prerender: { enabled: true, crawlLinks: true },
-        }
-      : {}),
+    ...(isGithubPages ? { spa: { enabled: true } } : {}),
   },
+  // GitHub Pages no ejecuta código de servidor: desactivamos el build de nitro.
   ...(isGithubPages ? { nitro: false as const } : {}),
 });
+
 
