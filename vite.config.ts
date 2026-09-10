@@ -25,6 +25,6 @@ export default defineConfig({
         }
       : {}),
   },
-  ...(isGithubPages ? { nitro: { preset: "node-server" } } : {}),
+  ...(isGithubPages ? { nitro: false as const } : {}),
 });
 
