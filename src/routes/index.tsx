@@ -23,6 +23,7 @@ import {
   Smile,
   Stethoscope,
   Target,
+  Scale,
   TestTube,
   Users,
   Video,
@@ -81,6 +82,7 @@ const navLinks = [
   { label: "Sistema Touch", href: "#touch" },
   { label: "Telemedicina", href: "#telemedicina" },
   { label: "Empresas y Comercios", href: "#comercios" },
+  { label: "Área Jurídica", href: "#area-juridica" },
   { label: "Quiénes Somos", href: "#quienes-somos" },
   { label: "Contacto", href: "#contacto" },
 ];
