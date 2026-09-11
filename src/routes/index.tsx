@@ -37,6 +37,7 @@ import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
 import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
 import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
 import clubAngloViejo from "@/assets/club-anglo-viejo.jpg.asset.json";
+import cargneluttiMinerales from "@/assets/cargnelutti-minerales.jpg.asset.json";
 import areaProtegida from "@/assets/area-protegida.jpg.asset.json";
 import telemedicina from "@/assets/telemedicina.jpg.asset.json";
 import telemedicinaFoto from "@/assets/telemedicina-foto.jpg.asset.json";
@@ -77,7 +78,7 @@ const navLinks = [
   { label: "Especialidades", href: "#especialidades" },
   { label: "Sistema Touch", href: "#touch" },
   { label: "Telemedicina", href: "#telemedicina" },
-  { label: "Comercios", href: "#comercios" },
+  { label: "Empresas y Comercios", href: "#comercios" },
   { label: "Quiénes Somos", href: "#quienes-somos" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -908,22 +909,31 @@ function Index() {
               </h2>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 items-center gap-10 sm:grid-cols-3 md:gap-16">
+            <div className="mt-12 grid grid-cols-1 items-center gap-10 sm:grid-cols-2 lg:grid-cols-4 md:gap-12">
               {[
                 {
                   src: prestadorLaSegunda.url,
                   alt: "La Segunda Seguros",
                   name: "La Segunda Seguros",
+                  sub: "",
                 },
                 {
                   src: prestadorLuppi.url,
                   alt: "Luppi Servicios Funerarios",
                   name: "Luppi Servicios Funerarios",
+                  sub: "",
                 },
                 {
                   src: clubAngloViejo.url,
                   alt: "Club Anglo Viejo Alta Gracia",
                   name: "Club Anglo Viejo",
+                  sub: "",
+                },
+                {
+                  src: cargneluttiMinerales.url,
+                  alt: "Cargnelutti Minerales S.A.",
+                  name: "Cargnelutti Minerales S.A.",
+                  sub: "Armando A. Cargnelutti",
                 },
               ].map((logo) => (
                 <div
@@ -941,6 +951,9 @@ function Index() {
                   <span className="mt-5 text-sm font-semibold tracking-wide text-navy md:text-base">
                     {logo.name}
                   </span>
+                  {logo.sub && (
+                    <span className="mt-1 text-xs text-muted-foreground">{logo.sub}</span>
+                  )}
                 </div>
               ))}
             </div>
