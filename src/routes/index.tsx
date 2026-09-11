@@ -1009,7 +1009,7 @@ function Index() {
                 Luppi Leticia
               </h3>
               <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                MAT 1-32578
+                M.P 1-32578
               </p>
               <ul className="mx-auto mt-5 flex max-w-xs flex-wrap items-center justify-center gap-2 text-sm text-navy/80">
                 {["Civil", "Familia", "Sucesiones"].map((a) => (
@@ -1042,9 +1042,14 @@ function Index() {
               <h3 className="mt-5 text-xl font-bold text-navy md:text-2xl">
                 Sanchez Sergio
               </h3>
-              <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                MAT 1-39965
-              </p>
+              <div className="mt-2 space-y-1">
+                <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                  M.P 1-39965
+                </p>
+                <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                  M.F TOMO 507 F.873
+                </p>
+              </div>
               <ul className="mx-auto mt-5 flex max-w-sm flex-wrap items-center justify-center gap-2 text-sm text-navy/80">
                 {[
                   "Defensa Penal",
