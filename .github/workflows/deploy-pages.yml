@@ -22,29 +22,36 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Base path "/<nombre-del-repo>/" para Project Pages (usuario.github.io/repo).
-      # Si usás un User/Org Page (usuario.github.io) o un dominio propio en la raíz,
-      # cambiá el valor a "/".
-      - name: Set base path
-        run: echo "GITHUB_PAGES_BASE=/${GITHUB_REPOSITORY#*/}/" >> "$GITHUB_ENV"
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
       - uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: bun install
+        run: bun install --frozen-lockfile
 
       - name: Build static site
+        env:
+          # configure-pages devuelve la ruta del repositorio o una ruta vacía
+          # cuando Pages usa el dominio propio indicado por CNAME.
+          GITHUB_PAGES_BASE: "${{ steps.pages.outputs.base_path }}/"
         run: bun run build
 
       - name: Assemble Pages output
         run: |
-          set -e
+          set -euo pipefail
+          test -s dist/client/_shell.html
           rm -rf _site
           cp -r dist/client _site
           # El shell de la SPA es la página de entrada y el fallback de rutas.
           cp _site/_shell.html _site/index.html
           cp _site/_shell.html _site/404.html
+          if [ -f CNAME ]; then cp CNAME _site/CNAME; fi
           touch _site/.nojekyll
+          test -s _site/index.html
+          test -s _site/404.html
+          test -d _site/assets
           ls -la _site
 
       - name: Upload artifact
