@@ -31,18 +31,18 @@ import {
 
 import logo from "@/assets/avance-logo.png";
 import touchImage from "@/assets/touch-omesis.jpg";
-import touchMayores from "@/assets/touch-mayores.png.asset.json";
-import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
-import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
-import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
-import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
-import clubAngloViejo from "@/assets/club-anglo-viejo.jpg.asset.json";
+import touchMayores from "@/assets/touch-mayores.png";
+import touchJovenes from "@/assets/touch-jovenes.png";
+import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg";
+import prestadorLuppi from "@/assets/prestador-luppi.jpg";
+import prestadorDentik from "@/assets/prestador-dentik.jpg";
+import clubAngloViejo from "@/assets/club-anglo-viejo.jpg";
 import cargneluttiMinerales from "@/assets/cargnelutti-minerales.jpg";
-import laNueva from "@/assets/la-nueva.jpg.asset.json";
-import miGranjaAvicola from "@/assets/mi-granja-avicola.jpg.asset.json";
-import areaProtegida from "@/assets/area-protegida.jpg.asset.json";
-import telemedicina from "@/assets/telemedicina.jpg.asset.json";
-import telemedicinaFoto from "@/assets/telemedicina-foto.jpg.asset.json";
+import laNueva from "@/assets/la-nueva.jpg";
+import miGranjaAvicola from "@/assets/mi-granja-avicola.jpg";
+import areaProtegida from "@/assets/area-protegida.jpg";
+import telemedicina from "@/assets/telemedicina.jpg";
+import telemedicinaFoto from "@/assets/telemedicina-foto.jpg";
 import {
   CtaButton,
   FloatingWhatsApp,
@@ -708,7 +708,7 @@ function Index() {
               <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
                 <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-white p-8 md:h-72">
                   <img
-                    src={prestadorLaSegunda.url}
+                    src={prestadorLaSegunda}
                     alt="La Segunda Seguros"
                     loading="lazy"
                     className="h-full w-auto max-w-full object-contain"
@@ -731,7 +731,7 @@ function Index() {
               <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
                 <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-white p-8 md:h-72">
                   <img
-                    src={prestadorLuppi.url}
+                    src={prestadorLuppi}
                     alt="Luppi Servicios Funerarios"
                     loading="lazy"
                     className="h-full w-auto max-w-full object-contain"
@@ -752,7 +752,7 @@ function Index() {
               <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
                 <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-white p-8 md:h-72">
                   <img
-                    src={prestadorDentik.url}
+                    src={prestadorDentik}
                     alt="DENTIK Soluciones Odontológicas"
                     loading="lazy"
                     className="h-full w-auto max-w-full object-contain"
@@ -804,11 +804,11 @@ function Index() {
                   alt: "Persona mayor con el botón de asistencia del Sistema Touch",
                 },
                 {
-                  src: touchMayores.url,
+                  src: touchMayores,
                   alt: "Pareja mayor usando el botón de asistencia del Sistema Touch",
                 },
                 {
-                  src: touchJovenes.url,
+                  src: touchJovenes,
                   alt: "Jóvenes con discapacidad usando el botón de asistencia del Sistema Touch",
                 },
               ]}
@@ -824,7 +824,7 @@ function Index() {
           <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 md:py-32 lg:grid-cols-2 lg:gap-20">
             <div>
               <img
-                src={telemedicina.url}
+                src={telemedicina}
                 alt="Logo de telemedicina de Avance"
                 loading="lazy"
                 className="mb-6 h-20 w-auto"
@@ -847,7 +847,7 @@ function Index() {
 
             <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-lift)]">
               <img
-                src={telemedicinaFoto.url}
+                src={telemedicinaFoto}
                 alt="Consulta virtual de telemedicina con un profesional médico"
                 loading="lazy"
                 className="h-auto w-full object-cover"
@@ -879,7 +879,7 @@ function Index() {
 
             <div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-2xl">
               <img
-                src={areaProtegida.url}
+                src={areaProtegida}
                 alt="Área Protegida de Avance: ambulancia 24 horas y datos de contacto"
                 loading="lazy"
                 className="h-auto w-full object-cover"
@@ -914,19 +914,19 @@ function Index() {
             <div className="mt-12 grid grid-cols-2 items-center gap-10 sm:grid-cols-3 lg:grid-cols-6 md:gap-12">
               {[
                 {
-                  src: prestadorLaSegunda.url,
+                  src: prestadorLaSegunda,
                   alt: "La Segunda Seguros",
                   name: "La Segunda Seguros",
                   sub: "",
                 },
                 {
-                  src: prestadorLuppi.url,
+                  src: prestadorLuppi,
                   alt: "Luppi Servicios Funerarios",
                   name: "Luppi Servicios Funerarios",
                   sub: "",
                 },
                 {
-                  src: clubAngloViejo.url,
+                  src: clubAngloViejo,
                   alt: "Club Anglo Viejo Alta Gracia",
                   name: "Club Anglo Viejo",
                   sub: "",
@@ -938,13 +938,13 @@ function Index() {
                   sub: "",
                 },
                 {
-                  src: laNueva.url,
+                  src: laNueva,
                   alt: "La Nueva",
                   name: "La Nueva",
                   sub: "",
                 },
                 {
-                  src: miGranjaAvicola.url,
+                  src: miGranjaAvicola,
                   alt: "Mi Granja Avícola",
                   name: "Mi Granja Avícola",
                   sub: "",
