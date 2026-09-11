@@ -38,6 +38,8 @@ import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
 import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
 import clubAngloViejo from "@/assets/club-anglo-viejo.jpg.asset.json";
 import cargneluttiMinerales from "@/assets/cargnelutti-minerales.jpg";
+import laNueva from "@/assets/la-nueva.jpg.asset.json";
+import miGranjaAvicola from "@/assets/mi-granja-avicola.jpg.asset.json";
 import areaProtegida from "@/assets/area-protegida.jpg.asset.json";
 import telemedicina from "@/assets/telemedicina.jpg.asset.json";
 import telemedicinaFoto from "@/assets/telemedicina-foto.jpg.asset.json";
