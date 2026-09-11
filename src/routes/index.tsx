@@ -911,7 +911,7 @@ function Index() {
               </h2>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 items-center gap-10 sm:grid-cols-2 lg:grid-cols-4 md:gap-12">
+            <div className="mt-12 grid grid-cols-2 items-center gap-10 sm:grid-cols-3 lg:grid-cols-6 md:gap-12">
               {[
                 {
                   src: prestadorLaSegunda.url,
@@ -935,6 +935,18 @@ function Index() {
                   src: cargneluttiMinerales,
                   alt: "Cargnelutti Minerales S.A.",
                   name: "Cargnelutti Minerales S.A.",
+                  sub: "",
+                },
+                {
+                  src: laNueva.url,
+                  alt: "La Nueva",
+                  name: "La Nueva",
+                  sub: "",
+                },
+                {
+                  src: miGranjaAvicola.url,
+                  alt: "Mi Granja Avícola",
+                  name: "Mi Granja Avícola",
                   sub: "",
                 },
               ].map((logo) => (
