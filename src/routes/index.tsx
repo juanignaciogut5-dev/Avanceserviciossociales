@@ -930,10 +930,10 @@ function Index() {
                   sub: "",
                 },
                 {
-                  src: cargneluttiMinerales.url,
+                  src: cargneluttiMinerales,
                   alt: "Cargnelutti Minerales S.A.",
                   name: "Cargnelutti Minerales S.A.",
-                  sub: "Armando A. Cargnelutti",
+                  sub: "",
                 },
               ].map((logo) => (
                 <div
