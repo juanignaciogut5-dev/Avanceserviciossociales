@@ -638,8 +638,8 @@ function Index() {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
                 Servicios
               </p>
-              <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">
-                Servicios integrales, una sola cobertura.
+              <h2 className="mt-4 text-2xl font-bold text-navy md:text-3xl">
+                Les brindamos coberturas de seguros de sepelio más importantes beneficios en salud primaria para todos nuestros afiliados.
               </h2>
             </div>
 
