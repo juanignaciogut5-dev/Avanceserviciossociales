@@ -951,6 +951,9 @@ function Index() {
                   <span className="mt-5 text-sm font-semibold tracking-wide text-navy md:text-base">
                     {logo.name}
                   </span>
+                  {logo.sub && (
+                    <span className="mt-1 text-xs text-muted-foreground">{logo.sub}</span>
+                  )}
                 </div>
               ))}
             </div>
