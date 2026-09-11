@@ -37,6 +37,7 @@ import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
 import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
 import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
 import clubAngloViejo from "@/assets/club-anglo-viejo.jpg.asset.json";
+import cargneluttiMinerales from "@/assets/cargnelutti-minerales.jpg.asset.json";
 import areaProtegida from "@/assets/area-protegida.jpg.asset.json";
 import telemedicina from "@/assets/telemedicina.jpg.asset.json";
 import telemedicinaFoto from "@/assets/telemedicina-foto.jpg.asset.json";
@@ -77,7 +78,7 @@ const navLinks = [
   { label: "Especialidades", href: "#especialidades" },
   { label: "Sistema Touch", href: "#touch" },
   { label: "Telemedicina", href: "#telemedicina" },
-  { label: "Comercios", href: "#comercios" },
+  { label: "Empresas y Comercios", href: "#comercios" },
   { label: "Quiénes Somos", href: "#quienes-somos" },
   { label: "Contacto", href: "#contacto" },
 ];
