@@ -641,7 +641,7 @@ function Index() {
                 Servicios
               </p>
               <h2 className="mt-4 text-2xl font-bold text-navy md:text-3xl">
-                Les brindamos coberturas de seguros de sepelio más importantes beneficios en salud primaria para todos nuestros afiliados.
+                Les brindamos coberturas de seguros de sepelio e importantes beneficios en salud primaria para todos nuestros afiliados.
               </h2>
             </div>
 
