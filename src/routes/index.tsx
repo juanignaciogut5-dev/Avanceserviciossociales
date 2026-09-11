@@ -31,18 +31,18 @@ import {
 
 import logo from "@/assets/avance-logo.png";
 import touchImage from "@/assets/touch-omesis.jpg";
-import touchMayores from "@/assets/touch-mayores.png.asset.json";
-import touchJovenes from "@/assets/touch-jovenes.png.asset.json";
-import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg.asset.json";
-import prestadorLuppi from "@/assets/prestador-luppi.jpg.asset.json";
-import prestadorDentik from "@/assets/prestador-dentik.jpg.asset.json";
-import clubAngloViejo from "@/assets/club-anglo-viejo.jpg.asset.json";
+import touchMayores from "@/assets/touch-mayores.png";
+import touchJovenes from "@/assets/touch-jovenes.png";
+import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg";
+import prestadorLuppi from "@/assets/prestador-luppi.jpg";
+import prestadorDentik from "@/assets/prestador-dentik.jpg";
+import clubAngloViejo from "@/assets/club-anglo-viejo.jpg";
 import cargneluttiMinerales from "@/assets/cargnelutti-minerales.jpg";
-import laNueva from "@/assets/la-nueva.jpg.asset.json";
-import miGranjaAvicola from "@/assets/mi-granja-avicola.jpg.asset.json";
-import areaProtegida from "@/assets/area-protegida.jpg.asset.json";
-import telemedicina from "@/assets/telemedicina.jpg.asset.json";
-import telemedicinaFoto from "@/assets/telemedicina-foto.jpg.asset.json";
+import laNueva from "@/assets/la-nueva.jpg";
+import miGranjaAvicola from "@/assets/mi-granja-avicola.jpg";
+import areaProtegida from "@/assets/area-protegida.jpg";
+import telemedicina from "@/assets/telemedicina.jpg";
+import telemedicinaFoto from "@/assets/telemedicina-foto.jpg";
 import {
   CtaButton,
   FloatingWhatsApp,
