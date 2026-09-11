@@ -746,6 +746,15 @@ function Index() {
                 <p className="mt-3 text-sm text-muted-foreground md:text-base">
                   Tel: <a href="tel:+543547506660" className="hover:text-primary">3547 - 506660</a>
                 </p>
+                <a
+                  href={`https://wa.me/5493547506660?text=${encodeURIComponent("Hola, quiero contactarme con Luppi Servicios Funerarios.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center justify-center gap-2.5 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-lift)] transition-all duration-200 hover:bg-primary/90"
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
+                  Luppi, Servicios Funerarios
+                </a>
               </article>
 
               {/* DENTIK - Soluciones Odontológicas */}
