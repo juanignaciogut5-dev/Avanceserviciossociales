@@ -909,22 +909,31 @@ function Index() {
               </h2>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 items-center gap-10 sm:grid-cols-3 md:gap-16">
+            <div className="mt-12 grid grid-cols-1 items-center gap-10 sm:grid-cols-2 lg:grid-cols-4 md:gap-12">
               {[
                 {
                   src: prestadorLaSegunda.url,
                   alt: "La Segunda Seguros",
                   name: "La Segunda Seguros",
+                  sub: "",
                 },
                 {
                   src: prestadorLuppi.url,
                   alt: "Luppi Servicios Funerarios",
                   name: "Luppi Servicios Funerarios",
+                  sub: "",
                 },
                 {
                   src: clubAngloViejo.url,
                   alt: "Club Anglo Viejo Alta Gracia",
                   name: "Club Anglo Viejo",
+                  sub: "",
+                },
+                {
+                  src: cargneluttiMinerales.url,
+                  alt: "Cargnelutti Minerales S.A.",
+                  name: "Cargnelutti Minerales S.A.",
+                  sub: "Armando A. Cargnelutti",
                 },
               ].map((logo) => (
                 <div
