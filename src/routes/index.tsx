@@ -37,6 +37,7 @@ import touchJovenes from "@/assets/touch-jovenes.png";
 import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg";
 import prestadorLuppi from "@/assets/prestador-luppi.jpg";
 import prestadorDentik from "@/assets/prestador-dentik.jpg";
+import farmaciaEstancia from "@/assets/farmacia-de-la-estancia.jpg";
 import clubAngloViejo from "@/assets/club-anglo-viejo.jpg";
 import cargneluttiMinerales from "@/assets/cargnelutti-minerales.jpg";
 import laNueva from "@/assets/la-nueva.jpg";
@@ -780,6 +781,52 @@ function Index() {
                 </p>
 
                 <ProfesionalesAccordion />
+              </article>
+
+              {/* Farmacia de la Estancia */}
+              <article className="flex flex-col items-center rounded-3xl border border-border bg-background p-10 text-center shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:p-12">
+                <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-white p-8 md:h-72">
+                  <img
+                    src={farmaciaEstancia}
+                    alt="Farmacia de la Estancia"
+                    loading="lazy"
+                    className="h-full w-auto max-w-full object-contain"
+                  />
+                </div>
+                <h3 className="mt-8 text-xl font-bold text-navy md:text-2xl">
+                  Farmacia de la Estancia
+                </h3>
+                <div className="mt-6 w-full space-y-5">
+                  <div className="flex flex-col items-center">
+                    <address className="not-italic text-sm leading-relaxed text-muted-foreground md:text-base">
+                      Paraguay esq Lucio V. Rossi
+                    </address>
+                    <a
+                      href={`https://wa.me/5493547642525?text=${encodeURIComponent("Hola, quiero contactarme con Farmacia de la Estancia (Paraguay esq Lucio V. Rossi).")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center justify-center gap-2.5 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-lift)] transition-all duration-200 hover:bg-primary/90"
+                    >
+                      <WhatsAppIcon className="h-4 w-4" />
+                      WhatsApp 3547-642525
+                    </a>
+                  </div>
+                  <div className="h-px w-full bg-border" />
+                  <div className="flex flex-col items-center">
+                    <address className="not-italic text-sm leading-relaxed text-muted-foreground md:text-base">
+                      Consejal Di Gianantonio 12
+                    </address>
+                    <a
+                      href={`https://wa.me/5493547329999?text=${encodeURIComponent("Hola, quiero contactarme con Farmacia de la Estancia (Consejal Di Gianantonio 12).")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center justify-center gap-2.5 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-lift)] transition-all duration-200 hover:bg-primary/90"
+                    >
+                      <WhatsAppIcon className="h-4 w-4" />
+                      WhatsApp 3547-329999
+                    </a>
+                  </div>
+                </div>
               </article>
             </div>
           </div>
