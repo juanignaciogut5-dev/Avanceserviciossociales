@@ -37,7 +37,7 @@ import touchJovenes from "@/assets/touch-jovenes.png";
 import prestadorLaSegunda from "@/assets/prestador-la-segunda.jpg";
 import prestadorLuppi from "@/assets/prestador-luppi.jpg";
 import prestadorDentik from "@/assets/prestador-dentik.jpg";
-import farmaciaEstancia from "@/assets/farmacia-de-la-estancia.jpg";
+import farmaciaEstancia from "@/assets/farmacia-de-la-estancia.png";
 import clubAngloViejo from "@/assets/club-anglo-viejo.jpg";
 import cargneluttiMinerales from "@/assets/cargnelutti-minerales.jpg";
 import laNueva from "@/assets/la-nueva.jpg";
